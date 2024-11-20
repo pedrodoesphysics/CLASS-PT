@@ -39,7 +39,8 @@ setup(
                            include_dirs=[nm.get_include(), "../include","/Users/gcabass/anaconda3/envs/openblas_test/include"],
                            libraries=liblist,
                            library_dirs=["../", GCCPATH],
-                           extra_link_args=['/Users/gcabass/anaconda3/envs/openblas_test/lib/libopenblas.dylib','-lgomp'],
+                           extra_link_args=['/usr/lib/x86_64-linux-gnu/libopenblas.a', '-lgomp'], # liyongda (20 Nov 2024): I editted this to include the archive file for OpenBLAS installed through apt (libopenblas-dev)
+                        #    extra_link_args'/Users/gcabass/anaconda3/envs/openblas_test/lib/libopenblas.dylib','-lgomp'],
                            )],
     #data_files=[('bbn', ['../bbn/sBBN.dat'])]
 )
